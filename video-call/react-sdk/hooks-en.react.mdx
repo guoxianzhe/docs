@@ -2,10 +2,9 @@
 title: Hooks
 ---
 
-TODO: 所有轨道加一下用哪个hook创建
-### useConnectionState
+## useConnectionState
 
-用于获取客户端连接状态。TODO: 和 useIsConnected的区别
+用于获取客户端连接状态。
 
 #### 参数
 
@@ -31,7 +30,7 @@ function App() {
 }
 ```
 
-### useIsConnected
+## useIsConnected
 
 用于获取客户端是否连接到服务器。
 
@@ -59,7 +58,7 @@ function App() {
 }
 ```
 
-### useCurrentUID
+## useCurrentUID
 
 用于获取当前用户 UID 。
 
@@ -87,7 +86,7 @@ function App() {
 }
 ```
 
-### useNetworkQuality
+## useNetworkQuality
 
 用于获取本地用户网络质量。
 
@@ -115,7 +114,7 @@ function App() {
 }
 ```
 
-### useVolumeLevel
+## useVolumeLevel
 
 用于自动获取音频轨道音量级别，自动获取的频率为每秒一次。
 
@@ -129,7 +128,7 @@ function App() {
 
 | 类型     | 描述                                |
 | -------- | ----------------------------------- |
-| `number` | 音频轨道的音量级别。取值范围 [0, 1]，1 代表理论最大音量。通常该值大于 0.6 代表用户在持续说话。 | TODO: 是指设备的最大音量，还是说发送信号的最大音量？
+| `number` | 音频轨道的音量级别。取值范围 [0, 1]，1 代表理论最大音量。通常该值大于 0.6 代表用户在持续说话。 | 
 
 #### 使用示例
 
@@ -144,7 +143,7 @@ function App() {
 }
 ```
 
-### useRTCClient
+## useRTCClient
 
 用于获取 `IAgoraRTCClient` 对象。
 
@@ -172,7 +171,7 @@ function App() {
 }
 ```
 
-### useJoin
+## useJoin
 
 用于加入频道。当组件准备好时加入频道，当组件卸载时自动离开频道。
 
@@ -222,7 +221,7 @@ function App() {
 }
 ```
 
-### usePublish
+## usePublish
 
 用于发布本地轨道。当组件准备好时发布，当组件卸载时取消发布。
 
@@ -257,7 +256,7 @@ function App() {
 }
 ```
 
-### useLocalMicrophoneTrack
+## useLocalMicrophoneTrack
 
 用于创建本地麦克风音频轨道。
 
@@ -293,7 +292,7 @@ function App() {
 }
 ```
 
-### useLocalCameraTrack
+## useLocalCameraTrack
 
 用于创建本地摄像头视频轨道。
 
@@ -328,7 +327,7 @@ function App() {
 }
 ```
 
-### useRemoteVideoTracks
+## useRemoteVideoTracks
 
 用于自动订阅和获取远端用户视频轨道。
 
@@ -364,7 +363,7 @@ function App() {
 }
 ```
 
-### useRemoteAudioTracks
+## useRemoteAudioTracks
 
 用于自动订阅和获取远端用户音频轨道。
 
@@ -400,76 +399,8 @@ function App() {
   return <></>;
 }
 ```
-### useRemoteUserTrack [1/3]
 
-用于获取远端用户视频轨道。
-
-#### 参数
-
-| 参数名   | 类型             | 是否必选 | 描述 |
-| -------- | ---------------- | -------- | ---- |
-| `user`      | `IAgoraRTCRemoteUser` &VerticalLine; `undefined` | 必选                             | 远端用户对象。                                                 |
-| `mediaType` | `"video"`            | 必选       | 媒体类型，仅支持 `"video"`。 |
-| `client`    | `IAgoraRTCClient` &VerticalLine; `null`      | 可选                             | [IAgoraRTCClient](https://docportal.shengwang.cn/cn/live-streaming-premium-4.x/API%20Reference/web_ng/interfaces/iagorartcclient.html) 对象。|
-
-#### 返回值
-
-返回一个包含以下属性的对象：
-| 属性              | 类型                   | 描述  |
-| ----------------------| ---------------------- | ------------------------ |
-| `track` | `IRemoteVideoTrack` &VerticalLine; `undefined` | 远端用户的视频轨道。如果远端用户或视频轨道不存在，则返回 `undefined`。 |
-| `isLoading` | `boolean` |<li>`true`：正在执行获取轨道相关操作。</li><li>`false`：已经执行获取轨道相关操作，但不代表成功获取轨道。</li> |
-| `error` | `AgoraRtcReactError` &VerticalLine; `null` | 获取轨道成功则返回 `null`，获取轨道失败则抛出错误。错误详见 [AgoraRtcReactError](./interfaces#agorartcreacterror)。 |
-
-#### 使用示例
-
-```jsx
-import { useRemoteUsers, useRemoteUserTrack } from "agora-rtc-react";
-
-function App() {
-  const remoteUsers = useRemoteUsers();
-
-  const videoTrack = useRemoteUserTrack(remoteUsers[0], "video");
-
-  return <></>;
-}
-```
-### useRemoteUserTrack [2/3]
-
-用于获取远端用户音频轨道。
-
-#### 参数
-
-| 参数名   | 类型             | 是否必选 | 描述 |
-| -------- | ---------------- | -------- | ---- |
-| `user`      | `IAgoraRTCRemoteUser` &VerticalLine; `undefined` | 必选                             | 远端用户对象。                                                 |
-| `mediaType` | `"audio"`            | 必选       | 媒体类型，仅支持 `"audio"`。 |
-| `client`    | `IAgoraRTCClient` &VerticalLine; `null`      | 可选                             | [IAgoraRTCClient](https://docportal.shengwang.cn/cn/live-streaming-premium-4.x/API%20Reference/web_ng/interfaces/iagorartcclient.html) 对象。 |
-
-#### 返回值
-
-返回一个包含以下属性的对象：
-| 属性              | 类型                   | 描述  |
-| ----------------------| ---------------------- | ------------------------ |
-| `track` | `IRemoteAudioTrack` &VerticalLine; `undefined` | 远端用户的音频轨道。如果远端用户或音频轨道不存在，则返回 `undefined`。 |
-| `isLoading` | `boolean` |<li>`true`：正在执行获取轨道相关操作。</li><li>`false`：已经执行获取轨道相关操作，但不代表成功获取轨道。</li> |
-| `error` | `AgoraRtcReactError` &VerticalLine; `null` | 获取轨道成功则返回 `null`，获取轨道失败则抛出错误。错误详见 [AgoraRtcReactError](./interfaces#agorartcreacterror)。 |
-
-#### 使用示例
-
-```jsx
-import { useRemoteUsers, useRemoteUserTrack } from "agora-rtc-react";
-
-function App() {
-  const remoteUsers = useRemoteUsers();
-
-  const audioTrack = useRemoteUserTrack(remoteUsers[0], "audio");
-
-  return <></>;
-}
-```
-
-### useRemoteUserTrack [3/3]
+## useRemoteUserTrack
 
 用于获取远端用户音视频轨道。
 
@@ -488,7 +419,7 @@ function App() {
 | ----------------------| ---------------------- | ------------------------ |
 | `track` | `IRemoteVideoTrack` &VerticalLine; `IRemoteAudioTrack` &VerticalLine; `undefined` | 远端用户的音频和视频轨道。如果远端用户或音频、视频轨道不存在，则返回 `undefined`。 |
 | `isLoading` | `boolean` |<li>`true`：正在执行获取轨道相关操作。</li><li>`false`：已经执行获取轨道相关操作，但不代表成功获取轨道。</li> |
-| `error` | `AgoraRtcReactError` &VerticalLine; `null` | 获取轨道成功则返回 `null`，获取轨道失败则抛出错误。错误详见 [AgoraRtcReactError](./interfaces#agorartcreacterror)。 TODO: 链接到 class，并且 class 和 interface 在一个页面 |
+| `error` | `AgoraRtcReactError` &VerticalLine; `null` | 获取轨道成功则返回 `null`，获取轨道失败则抛出错误。错误详见 [AgoraRtcReactError](./interfaces#agorartcreacterror)。 |
 
 #### 使用示例
 
@@ -505,7 +436,7 @@ function App() {
 }
 ```
 
-### useRemoteUsers
+## useRemoteUsers
 
 用于获取远端用户列表。
 
@@ -538,7 +469,7 @@ function App() {
 }
 ```
 
-### useAutoPlayVideoTrack
+## useAutoPlayVideoTrack
 
 用于控制本地或远端视频轨道。
 
@@ -551,7 +482,7 @@ function App() {
 | -------- | ---------------- | -------- | ---- |
 | `track` | `IRemoteVideoTrack` &VerticalLine; `ILocalVideoTrack` | 必选     | 远端视频轨道对象或本地视频轨道对象。                                                                   |
 | `play`  | `boolean`          | 可选              | <li>`true`：播放该轨道。</li><li>`false`：停止播放该轨道。</li> |
-| `div`   | `HTMLElement` &VerticalLine; `null`            | 可选      | 用于渲染视频的 HTML 元素。如果提供了该参数，视频将在该元素中自动播放。如果未提供，则不会自动播放视频。 | TODO: 如果 play 为 true，div 不传，是否播放？
+| `div`   | `HTMLElement` &VerticalLine; `null`            | 可选      | 用于渲染视频的 HTML 元素。如果提供了该参数，视频将在该元素中自动播放。如果未提供，则不会自动播放视频。 | 
 
 #### 返回值
 
@@ -570,7 +501,7 @@ function App() {
 }
 ```
 
-### useAutoPlayAudioTrack
+## useAutoPlayAudioTrack
 
 用于控制本地或远端音频轨道。
 

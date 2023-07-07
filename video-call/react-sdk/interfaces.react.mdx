@@ -71,11 +71,10 @@ export class AgoraRtcReactError extends Error {
 
 | 属性     | 类型         | 是否必选 | 描述  |
 | -------- | ---------------- | -------- | ---- |
-| `rtcMethod`   | `string`         | 必选     | 报错的 JavaScript 方法。TODO: 比如 useJoin 返回 error，这里就是 join？ |
-| `rtcError` | `AgoraRTCError` &VerticalLine; `string`       | 必选     |   web 的 class AgoraRTCError TODO: 没对外，无法链接|
-| `name` | `AgoraRTCError` &VerticalLine; `string`       | 必选     |    TODO: |
+| `rtcMethod`   | `string`         | 必选     | 报错的 JavaScript 方法。 |
+| `rtcError` | `AgoraRTCError` &VerticalLine; `string`       | 必选     |   web 的 class AgoraRTCError |
+| `name` | `AgoraRTCError` &VerticalLine; `string`       | 必选     |     |
 
-TODO: constructor 和 print 是否要写
 ## IAgoraRtcReactError
 
 
@@ -92,5 +91,5 @@ rtcmethod: 报错的 web 方法是什么；rtcerror 是完全对齐 web 的 Agor
 
 | 属性     | 类型         | 是否必选 | 描述  |
 | -------- | ---------------- | -------- | ---- |
-| `rtcMethod`   | `string`         | 必选     | 报错的 JavaScript 方法。TODO: 比如 useJoin 返回 error，这里就是 join？ |
-| `rtcError` | `AgoraRTCError` &VerticalLine; `string`       | 必选     |   web 的 class AgoraRTCError TODO: 没对外，无法链接|
+| `rtcMethod`   | `string`         | 必选     | 报错的 JavaScript 方法。 |
+| `rtcError` | `AgoraRTCError` &VerticalLine; `string`       | 必选     |   web 的 class AgoraRTCError |

@@ -2,9 +2,6 @@
 title: Components
 ---
 
-TODO:
-- 根据搜索索引的规则修改所有标题
-
 ## AgoraRTCProvider
 
 该组件用于将传入的 `client` 对象提供给 `children` 内的各个组件，即向子组件提供 [Context](https://react.dev/learn/passing-data-deeply-with-context)。
@@ -58,12 +55,12 @@ function App({ children }) {
 ## LocalAudioTrack
 
 该组件用于播放本地音频轨道（不支持指定使用的媒体设备）。
-TODO: 那怎么判断用哪个设备
+
 #### Props
 
 | 属性名     | 类型               | 默认值  | 描述                                                                                                                                                                                                     |
 | ---------- | ------------------ | ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `track`    | `ILocalAudioTrack` | 无      | 要播放的本地音频轨道。通过 [createMicrophoneAudioTrack](https://docportal.shengwang.cn/cn/live-streaming-premium-4.x/API%20Reference/web_ng/interfaces/iagorartc.html#createmicrophoneaudiotrack) 创建。TODO: 是不是都写为用 useLocalMicrophoneTrack 创建 |
+| `track`    | `ILocalAudioTrack` | 无      | 要播放的本地音频轨道。通过 [createMicrophoneAudioTrack](https://docportal.shengwang.cn/cn/live-streaming-premium-4.x/API%20Reference/web_ng/interfaces/iagorartc.html#createmicrophoneaudiotrack) 创建。 |
 | `play`     | `boolean`          | `false` | <li>`true`：播放该轨道。</li><li>`false`：停止播放该轨道。</li>                                                                                                                                          |
 | `volume`   | `number`           | 无      | 音量大小。取值范围 [0, 1000]，0 代表静音，100 代表原始音量。100 以上会使用 [Web Audio API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API) 进行音量增益。          |
 | `disabled` | `boolean`          | `false`      | <li>`true`：禁用该轨道。禁用后，SDK 将停止播放和发布该轨道。</li><li>`false`：启用该轨道。</li>                                                                                                          |
@@ -136,7 +133,7 @@ function App() {
 | `playAudio`  | `boolean`               | `false`    | <li>`true`：播放本地用户的音频轨道。</li><li>`false`：停止播放本地用户的音频轨道。</li>                                                                                                                    |
 | `playVideo`  | `boolean`               | `false`    | <li>`true`：播放本地用户的视频轨道。</li><li>`false`：停止播放本地用户的视频轨道。</li>                                                                                                                    |
 | `volume`     | `number`                | 无      | 音量大小。取值范围 [0, 1000]，0 代表静音，100 代表原始音量。100 以上会使用 [Web Audio API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API) 进行音量增益。           |
-| `cover`      | `string`                | 无      | 当 `playVideo` 为 `false`时要渲染的封面图片，用于替代视频画面显示。  TODO: 除了在线 url，是否支持本地图片相对路径                                                                                                                                                              |
+| `cover`      | `string`                | 无      | 当 `playVideo` 为 `false`时要渲染的封面图片，用于替代视频画面显示。                                                                                                                                                             |
 | `children`   | `ReactNode`             | 无      | 需要展示的 React 节点。                                                                                                                                                                                    |
 
 #### 使用示例
