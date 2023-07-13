@@ -2,12 +2,15 @@
 title: 概览
 ---
 
-TODO: 产品补充下 React SDK 与 JS SDK 的区别？
+## React 基础概念
 
-React SDK 基于 Web SDK 的 API 做了封装，需要 Web SDK 的以下对象：
+- Component：也称为组件。React 应用程序是由组件组成的。组件是 UI（用户界面）的组成部分，拥有自己的逻辑和外观。通过组件，你可以把 UI 拆分为独立可复用的代码片段。组件分为函数组件和类组件。
+- Hook：也称为钩子。函数组件中如果需要引入状态、生命周期方法等外部功能，可以通过 Hook 把对应的外部代码“钩”进来。Hook 均使用 `use` 前缀命名。
 
-- [createClient](https://docportal.shengwang.cn/cn/live-streaming-premium-4.x/API%20Reference/web_ng/interfaces/iagorartc.html#createclient)
-- [IAgoraRTCClient](https://docportal.shengwang.cn/cn/live-streaming-premium-4.x/API%20Reference/web_ng/interfaces/iagorartcclient.html)
-- [createMicrophoneAudioTrack](https://docportal.shengwang.cn/cn/live-streaming-premium-4.x/API%20Reference/web_ng/interfaces/iagorartc.html#createmicrophoneaudiotrack)
+如果你对 React 还不太熟悉，推荐阅读 [React 官方文档](https://react.dev/learn)。
 
-好像只需要知道有这个对象，不需要知道对象具体的属性？
+## React SDK 和 Web SDK 的关系
+
+React SDK 基于 [Web SDK 4.x](https://docportal.shengwang.cn/cn/video-call-4.x/API%20Reference/web_ng/index.html) 进行开发。例如，`useLocalMicrophoneTrack` 这个 Hook 在执行时，会调用 Web SDK 的 [`createMicrophoneAudioTrack`](https://docportal.shengwang.cn/cn/video-call-4.x/API%20Reference/web_ng/interfaces/iagorartc.html#createmicrophoneaudiotrack) 方法。
+
+对于实时音视频的大部分基础功能，你可以只关注 React SDK 提供的 API。但在实现某些复杂用法或进阶功能时，你还是需要使用 Web SDK 的 API。此时 React SDK 的文档会提供 Web SDK 相关 API 的文档链接，点击即可跳转查看。
