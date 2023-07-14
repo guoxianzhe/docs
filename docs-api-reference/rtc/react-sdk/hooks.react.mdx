@@ -2,10 +2,7 @@
 title: Hooks
 ---
 
-<h2
-  className="anchor index-auto-group index-hook-useconnectionstate"
-  id="useconnectionstate"
->
+<h2 className="anchor index-auto-group index-hook-useconnectionstate" id="useconnectionstate">
   useConnectionState
 </h2>
 
@@ -35,10 +32,7 @@ function App() {
 }
 ```
 
-<h2
-  className="anchor index-auto-group index-hook-useisconnected"
-  id="useisconnected"
->
+<h2 className="anchor index-auto-group index-hook-useisconnected" id="useisconnected">
   useIsConnected
 </h2>
 
@@ -68,10 +62,7 @@ function App() {
 }
 ```
 
-<h2
-  className="anchor index-auto-group index-hook-usecurrentuid"
-  id="usecurrentuid"
->
+<h2 className="anchor index-auto-group index-hook-usecurrentuid" id="usecurrentuid">
   useCurrentUID
 </h2>
 
@@ -101,10 +92,7 @@ function App() {
 }
 ```
 
-<h2
-  className="anchor index-auto-group index-hook-usenetworkquality"
-  id="usenetworkquality"
->
+<h2 className="anchor index-auto-group index-hook-usenetworkquality" id="usenetworkquality">
   useNetworkQuality
 </h2>
 
@@ -134,10 +122,7 @@ function App() {
 }
 ```
 
-<h2
-  className="anchor index-auto-group index-hook-usevolumelevel"
-  id="usevolumelevel"
->
+<h2 className="anchor index-auto-group index-hook-usevolumelevel" id="usevolumelevel">
   useVolumeLevel
 </h2>
 
@@ -168,10 +153,7 @@ function App() {
 }
 ```
 
-<h2
-  className="anchor index-auto-group index-hook-usertcclient"
-  id="usertcclient"
->
+<h2 className="anchor index-auto-group index-hook-usertcclient" id="usertcclient">
   useRTCClient
 </h2>
 
@@ -247,7 +229,7 @@ function App() {
       channel: YOUR_CHANNEL,
       token: YOUR_TOKEN,
     },
-    ready
+    ready,
   );
 
   return <></>;
@@ -280,11 +262,7 @@ function App() {
 #### 使用示例
 
 ```jsx
-import {
-  useLocalMicrophoneTrack,
-  useLocalCameraTrack,
-  usePublish,
-} from "agora-rtc-react";
+import { useLocalMicrophoneTrack, useLocalCameraTrack, usePublish } from "agora-rtc-react";
 
 function App() {
   // get audioTrack and videoTrack before publish
@@ -338,10 +316,7 @@ function App() {
 }
 ```
 
-<h2
-  className="anchor index-auto-group index-hook-uselocalcameratrack"
-  id="uselocalcameratrack"
->
+<h2 className="anchor index-auto-group index-hook-uselocalcameratrack" id="uselocalcameratrack">
   useLocalCameraTrack
 </h2>
 
@@ -379,10 +354,7 @@ function App() {
 }
 ```
 
-<h2
-  className="anchor index-auto-group index-hook-useremotevideotracks"
-  id="useremotevideotracks"
->
+<h2 className="anchor index-auto-group index-hook-useremotevideotracks" id="useremotevideotracks">
   useRemoteVideoTracks
 </h2>
 
@@ -421,10 +393,7 @@ function App() {
 }
 ```
 
-<h2
-  className="anchor index-auto-group index-hook-useremoteaudiotracks"
-  id="useremoteaudiotracks"
->
+<h2 className="anchor index-auto-group index-hook-useremoteaudiotracks" id="useremoteaudiotracks">
   useRemoteAudioTracks
 </h2>
 
@@ -464,10 +433,7 @@ function App() {
 }
 ```
 
-<h2
-  className="anchor index-auto-group index-hook-useremoteusertrack"
-  id="useremoteusertrack"
->
+<h2 className="anchor index-auto-group index-hook-useremoteusertrack" id="useremoteusertrack">
   useRemoteUserTrack
 </h2>
 
@@ -506,10 +472,7 @@ function App() {
 }
 ```
 
-<h2
-  className="anchor index-auto-group index-hook-useremoteusers"
-  id="useremoteusers"
->
+<h2 className="anchor index-auto-group index-hook-useremoteusers" id="useremoteusers">
   useRemoteUsers
 </h2>
 
@@ -545,10 +508,7 @@ function App() {
 }
 ```
 
-<h2
-  className="anchor index-auto-group index-hook-useautoplayvideotrack"
-  id="useautoplayvideotrack"
->
+<h2 className="anchor index-auto-group index-hook-useautoplayvideotrack" id="useautoplayvideotrack">
   useAutoPlayVideoTrack
 </h2>
 
@@ -582,10 +542,7 @@ function App() {
 }
 ```
 
-<h2
-  className="anchor index-auto-group index-hook-useautoplayaudiotrack"
-  id="useautoplayaudiotrack"
->
+<h2 className="anchor index-auto-group index-hook-useautoplayaudiotrack" id="useautoplayaudiotrack">
   useAutoPlayAudioTrack
 </h2>
 
@@ -608,10 +565,7 @@ function App() {
 #### 使用示例
 
 ```jsx
-import {
-  useAutoPlayAudioTrack,
-  useLocalMicrophoneTrack,
-} from "agora-rtc-react";
+import { useAutoPlayAudioTrack, useLocalMicrophoneTrack } from "agora-rtc-react";
 
 function App() {
   const audioTrack = useLocalMicrophoneTrack();

@@ -2,10 +2,7 @@
 title: Components
 ---
 
-<h2
-  className="anchor index-auto-group index-component-agorartcprovider"
-  id="agorartcprovider"
->
+<h2 className="anchor index-auto-group index-component-agorartcprovider" id="agorartcprovider">
   AgoraRTCProvider
 </h2>
 
@@ -25,9 +22,7 @@ import { AgoraRTCProvider } from "agora-rtc-react";
 import AgoraRTC from "agora-rtc-sdk-ng";
 
 function App({ children }) {
-  const [client] = useState(() =>
-    AgoraRTC.createClient({ mode: "rtc", codec: "vp8" })
-  );
+  const [client] = useState(() => AgoraRTC.createClient({ mode: "rtc", codec: "vp8" }));
   return <AgoraRTCProvider client={client}>{children}</AgoraRTCProvider>;
 }
 ```
@@ -59,21 +54,12 @@ import { AgoraRTCScreenShareProvider } from "agora-rtc-react";
 import AgoraRTC from "agora-rtc-sdk-ng";
 
 function App({ children }) {
-  const [client] = useState(() =>
-    AgoraRTC.createClient({ mode: "rtc", codec: "vp8" })
-  );
-  return (
-    <AgoraRTCScreenShareProvider client={client}>
-      {children}
-    </AgoraRTCScreenShareProvider>
-  );
+  const [client] = useState(() => AgoraRTC.createClient({ mode: "rtc", codec: "vp8" }));
+  return <AgoraRTCScreenShareProvider client={client}>{children}</AgoraRTCScreenShareProvider>;
 }
 ```
 
-<h2
-  className="anchor index-auto-group index-component-localaudiotrack"
-  id="localaudiotrack"
->
+<h2 className="anchor index-auto-group index-component-localaudiotrack" id="localaudiotrack">
   LocalAudioTrack
 </h2>
 
@@ -110,10 +96,7 @@ function App() {
 }
 ```
 
-<h2
-  className="anchor index-auto-group index-component-localvideotrack"
-  id="localvideotrack"
->
+<h2 className="anchor index-auto-group index-component-localvideotrack" id="localvideotrack">
   LocalVideoTrack
 </h2>
 
@@ -148,10 +131,7 @@ function App() {
 }
 ```
 
-<h2
-  className="anchor index-auto-group index-component-localuser"
-  id="localuser"
->
+<h2 className="anchor index-auto-group index-component-localuser" id="localuser">
   LocalUser
 </h2>
 
@@ -178,11 +158,7 @@ function App() {
 #### 使用示例
 
 ```jsx
-import {
-  LocalUser,
-  useLocalAudioTrack,
-  useLocalCameraTrack,
-} from "agora-rtc-react";
+import { LocalUser, useLocalAudioTrack, useLocalCameraTrack } from "agora-rtc-react";
 
 function App() {
   const audioTrack = useLocalAudioTrack();
@@ -202,10 +178,7 @@ function App() {
 }
 ```
 
-<h2
-  className="anchor index-auto-group index-component-remoteaudiotrack"
-  id="remoteaudiotrack"
->
+<h2 className="anchor index-auto-group index-component-remoteaudiotrack" id="remoteaudiotrack">
   RemoteAudioTrack
 </h2>
 
@@ -224,12 +197,7 @@ function App() {
 #### 使用示例
 
 ```jsx
-import {
-  RemoteAudioTrack,
-  useJoin,
-  useRemoteAudioTracks,
-  useRemoteUsers,
-} from "agora-rtc-react";
+import { RemoteAudioTrack, useJoin, useRemoteAudioTracks, useRemoteUsers } from "agora-rtc-react";
 
 function App() {
   const remoteUsers = useRemoteUsers();
@@ -237,7 +205,7 @@ function App() {
 
   return (
     <>
-      {audioTracks.map((track) => (
+      {audioTracks.map(track => (
         <RemoteAudioTrack key={track.getUserId()} play track={track} />
       ))}
     </>
@@ -245,10 +213,7 @@ function App() {
 }
 ```
 
-<h2
-  className="anchor index-auto-group index-component-remotevideotrack"
-  id="remotevideotrack"
->
+<h2 className="anchor index-auto-group index-component-remotevideotrack" id="remotevideotrack">
   RemoteVideoTrack
 </h2>
 
@@ -264,12 +229,7 @@ function App() {
 #### 使用示例
 
 ```jsx
-import {
-  RemoteAudioTrack,
-  useJoin,
-  useRemoteAudioTracks,
-  useRemoteUsers,
-} from "agora-rtc-react";
+import { RemoteAudioTrack, useJoin, useRemoteAudioTracks, useRemoteUsers } from "agora-rtc-react";
 
 function App() {
   const remoteUsers = useRemoteUsers();
@@ -277,7 +237,7 @@ function App() {
 
   return (
     <>
-      {audioTracks.map((track) => (
+      {audioTracks.map(track => (
         <RemoteAudioTrack key={track.getUserId()} play track={track} />
       ))}
     </>
@@ -285,10 +245,7 @@ function App() {
 }
 ```
 
-<h2
-  className="anchor index-auto-group index-component-remoteuser"
-  id="remoteuser"
->
+<h2 className="anchor index-auto-group index-component-remoteuser" id="remoteuser">
   RemoteUser
 </h2>
 
@@ -316,7 +273,7 @@ function App() {
 
   return (
     <>
-      {remoteUsers.map((user) => (
+      {remoteUsers.map(user => (
         <RemoteUser key={user.uid} user={user} />
       ))}
     </>
